@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ferretería Tornillo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./index.js" defer></script>
+    <script type="module" src="./chatBot/saludos.js"></script>
+    <script type="module" src="./chatBot/nombresPosibles.js"></script>
+    <script type="module" src="./chatBot/funcionesChatbot.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-lime-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">🔩 Ferretería Tornillo</h1>
+
+            <button id="btnMenu" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Navegación -->
+            <nav id="menuNav"
+                class="hidden absolute top-16 left-0 w-full bg-lime-700 text-center space-y-2 py-4 md:space-y-0 md:space-x-4 md:static md:flex md:w-auto md:py-0 md:bg-transparent md:block">
+                <a href="#" class="block md:inline hover:underline">Inicio</a>
+                <a href="#productos" class="block md:inline hover:underline">Productos</a>
+                <a href="#contacto" class="block md:inline hover:underline">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- Productos -->
+    <section class="py-12 container mx-auto">
+        <h2 class="text-2xl font-bold mb-8 text-center">Productos destacados</h2>
+        <div id="productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2">
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="bg-lime-50 py-12">
+        <div class="container mx-auto max-w-xl">
+            <h2 class="text-2xl font-bold text-center mb-8">📞 Contactanos</h2>
+            <form class="bg-white p-6 rounded shadow space-y-4" action="" id="form">
+                <input class="w-full border rounded p-2" type="text" name="name" placeholder="Nombre Completo" required>
+                <input class="w-full border rounded p-2" type="email" name="email" placeholder="Email" required>
+                <textarea class="w-full border rounded p-2" rows="4" type="mensaje" name="mensaje required"
+                    placeholder="Por favor deje su mensaje aquí..."></textarea>
+                <button class="bg-lime-700 text-white px-4 py-2 rounded hover:bg-lime-800 transition" type="submit"
+                    name="register" class="btn-sumit">Enviar</button>
+            </form>
+            <a class="hidden" href="mailto:alexis.r4995@gmail.com" id="mailto">mail</a>
+        </div>
+    </section>
+
+    <div class="fixed bottom-4 right-4">
+        <button id="botonChat" class="bg-lime-900 text-white px-4 py-2 rounded-full shadow-lg hover:bg-lime-800">
+            💬 Chat
+        </button>
+        <div id="chatBox" class="hidden bg-white w-80 p-4 rounded shadow-lg mt-2">
+            <div class="h-48 overflow-y-auto mb-2 border p-2 text-sm" id="mensajes">Hola, ¿en qué puedo ayudarte?</div>
+            <input id="inputMensaje" type="text" placeholder="Escribí tu pregunta..."
+                class="border w-full p-2 rounded text-sm">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-lime-700 text-white text-center py-4">
+        <p>&copy; 2025 Ferretería Tornillo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
